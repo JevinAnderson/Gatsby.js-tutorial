@@ -1,20 +1,20 @@
-import React, { Component, createRef } from 'react'
-import Layout from '../components/layout'
-import { Link } from 'gatsby'
-import waitForGlobal from '../utils/wait-for-global'
+import React, { Component, createRef } from 'react';
+import Layout from '../components/layout';
+import { Link } from 'gatsby';
+import waitForGlobal from '../utils/wait-for-global';
 
 export class About extends Component {
-  buttonRef = createRef()
+  buttonRef = createRef();
 
   componentDidMount() {
-    waitForGlobal('mdc').then(this.addRipple)
+    waitForGlobal('mdc').then(this.addRipple);
   }
 
   addRipple = mdc => {
     if (this.buttonRef.current) {
-      mdc.ripple.MDCRipple.attachTo(this.buttonRef.current)
+      mdc.ripple.MDCRipple.attachTo(this.buttonRef.current);
     }
-  }
+  };
 
   render = () => (
     <Layout>
@@ -27,7 +27,7 @@ export class About extends Component {
         </button>
       </Link>
     </Layout>
-  )
+  );
 }
 
-export default About
+export default About;
